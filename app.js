@@ -121,3 +121,11 @@ searchBtn.addEventListener('click', function () {
 sliderBtn.addEventListener('click', function () {
   createSlider()
 })
+
+//trigger search button by pressing Enter
+inputField = document.getElementById('search');
+inputField.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") { //create event for the key Enter
+        document.getElementById('search-btn').click();
+    }
+})
