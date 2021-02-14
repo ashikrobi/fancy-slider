@@ -20,10 +20,11 @@ const showImages = (images) => {
   // show gallery title
   galleryHeader.style.display = 'flex';
   images.forEach(image => {
-    // console.log(image);
+    console.log(image);
     let div = document.createElement('div');
     div.className = 'col-lg-3 col-md-4 col-xs-6 img-item mb-2';
-    div.innerHTML = ` <img class="img-fluid img-thumbnail" onclick=selectItem(event,"${image.webformatURL}") src="${image.webformatURL}" alt="${image.tags}">`; //selection happening here
+    div.innerHTML = ` <img class="img-fluid img-thumbnail" onclick=selectItem(event,"${image.webformatURL}") src="${image.webformatURL}" alt="${image.tags}">
+    <h6 class="d-flex justify-content-center">Credit: ${image.user}</h6>`; //selection happening here
     gallery.appendChild(div)
     toggleSpinner(false);
   })
